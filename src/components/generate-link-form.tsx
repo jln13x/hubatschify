@@ -37,7 +37,7 @@ export const GenerateLinkForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full max-w-3xl flex-col items-start  space-y-8 px-4 md:w-1/2 "
+      className="flex w-full max-w-3xl flex-col items-start  space-y-8 px-4"
     >
       <div className="flex w-full flex-col md:flex-row md:items-center md:space-x-8 md:space-y-0 ">
         <input
@@ -45,10 +45,11 @@ export const GenerateLinkForm = () => {
           placeholder="Enter your Link..."
           name="url"
           className="relative w-full border-b-2 border-white border-opacity-40 bg-transparent  py-4 text-2xl text-white transition-colors duration-200 placeholder:opacity-60 focus:border-opacity-100 focus:outline-none"
+          autoComplete="off"
         />
 
         <button
-          className="rounded-lg bg-gradient-to-br from-violet-700 to-amber-700  px-2 py-4 font-bold uppercase tracking-[0.4em] text-white"
+          className="mx-auto mt-4 rounded-lg bg-gradient-to-br  from-violet-700 to-amber-700 px-2 py-4 font-bold uppercase tracking-[0.4em] text-white"
           type="submit"
         >
           {isLoading ? "Loading..." : "Hubatschify"}

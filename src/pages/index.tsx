@@ -1,4 +1,5 @@
-import type { NextPage } from "next";
+import { getServerAuthSession } from "@/server/common/get-server-auth-session";
+import type { GetServerSideProps, NextPage } from "next";
 import { GitHubLoginButton } from "../components/github-login-button";
 
 const Home: NextPage = () => {
@@ -13,6 +14,23 @@ const Home: NextPage = () => {
       <GitHubLoginButton className="mx-auto mt-12" />
     </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getServerAuthSession(ctx);
+
+  if (session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/generate-link",
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
 };
 
 export default Home;
