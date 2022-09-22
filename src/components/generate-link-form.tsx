@@ -117,7 +117,7 @@ const LinkCreated = ({ slug, reset }: LinkCreatedProps) => {
 };
 
 const appendSlugToUrl = (slug: string) => {
-  return `${window.location.origin}/${slug}`;
+  return `${window.location.origin}/h/${slug}`;
 };
 
 const toClipboard = (text: string) => {
