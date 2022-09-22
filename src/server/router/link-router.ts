@@ -10,8 +10,7 @@ export const linkRouter = createProtectedRouter().mutation("generate", {
 
     const hubatsch = ["h", "u", "b", "a", "t", "s", "c", "h"];
 
-    // Random number between 1 and 10
-    const randomNumber = Math.floor(Math.random() * 10) + 1;
+    const randomNumber = Math.floor(Math.random() * 14) + 6;
 
     const slug = [...Array(randomNumber)]
       .map(() => {
@@ -19,7 +18,7 @@ export const linkRouter = createProtectedRouter().mutation("generate", {
           .map((h) => (Math.random() > 0.5 ? h.toUpperCase() : h.toLowerCase()))
           .join("");
       })
-      .join("-");
+      .join("");
 
     const link = await ctx.prisma.link.create({
       data: {
