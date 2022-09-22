@@ -5,6 +5,7 @@ import clsx from "clsx";
 interface Props {
   className?: string;
 }
+
 export const GitHubLoginButton = ({ className }: Props) => {
   return (
     <button

@@ -14,9 +14,11 @@ const MyApp: AppType<{ session: Session | null }> = ({
   pageProps: { session, ...pageProps },
 }) => {
   return (
-    <SessionProvider session={session}>
-      <Component {...pageProps} />
-    </SessionProvider>
+    <main className="grid h-screen w-screen place-items-center bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900">
+      <SessionProvider session={session}>
+        <Component {...pageProps} />
+      </SessionProvider>
+    </main>
   );
 };
 
